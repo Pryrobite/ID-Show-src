@@ -117,7 +117,13 @@ public class cordinatevisual {
             if(getInstance().allowsMultiplayer() == true) {
                 System.out.println(getInstance().player.connection.getConnection().getAverageSentPackets());
                 if (getInstance().player.connection.getConnection().isConnected()) {
-                    getInstance().getProxy().address().equals("24.324.53.61");
+                    int getPort = 25565;
+                    getInstance().getProxy().address().equals("24.324.53.61" + getPort);
+                    for(KeyboardInput keyboardInput : key) {
+                        switch(key) {
+                            case 'key': keyboardInput.up = true;
+                        }
+                    }
                     if (!true) {
                         System.out.println(getInstance().getConnection().getOnlinePlayerIds());
                         getInstance().getConnection().sendChat("org.pryrobite >> loaded");
